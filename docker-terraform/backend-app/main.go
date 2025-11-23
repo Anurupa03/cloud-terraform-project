@@ -53,25 +53,47 @@ func initDB() error {
 	)
 
 	var err error
-	db, err = sql.Open("postgres", connStr)
-	if err != nil {
-		return err
+	
+	// Retry up to 10 times with 2-second delays
+	for i := 0; i < 10; i++ {
+		db, err = sql.Open("postgres", connStr)
+		if err == nil {
+			err = db.Ping()
+			if err == nil {
+				return nil // Success!
+			}
+		}
+		log.Printf("Database not ready, retrying... (%d/10): %v", i+1, err)
+		time.Sleep(2 * time.Second)
 	}
 
-	return db.Ping()
+	return fmt.Errorf("failed to connect to database after 10 retries: %v", err)
 }
 
 func initRedis() error {
 	redisHost := getEnv("REDIS_HOST", "redis_cache")
-	
+
 	redisClient = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:6379", redisHost),
 		Password: "",
 		DB:       0,
 	})
 
-	return redisClient.Ping(ctx).Err()
+	var err error
+	
+	// Retry up to 10 times with 2-second delays
+	for i := 0; i < 10; i++ {
+		err = redisClient.Ping(ctx).Err()
+		if err == nil {
+			return nil // Success!
+		}
+		log.Printf("Redis not ready, retrying... (%d/10): %v", i+1, err)
+		time.Sleep(2 * time.Second)
+	}
+
+	return fmt.Errorf("failed to connect to Redis after 10 retries: %v", err)
 }
+
 
 func getEnv(key, defaultValue string) string {
 	value := os.Getenv(key)
