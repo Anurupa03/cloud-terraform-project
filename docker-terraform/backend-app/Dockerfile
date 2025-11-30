@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine AS builder
+FROM golang:1.25 AS builder
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ RUN go mod download
 COPY main.go ./
 
 # Build the application
-RUN go build -o backend main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o backend main.go
 
 
 FROM alpine:latest
