@@ -54,7 +54,7 @@ I added **Redis** as an extra module. The goal was to extend the infrastructure 
 2. Go into the Docker project folder:
 
    ```sh
-   cd docker
+   cd docker-terraform
    ```
 3. Initialize Terraform:
 
@@ -106,7 +106,7 @@ k3d cluster create myapp
 ### 2. Go into the Kubernetes project folder
 
 ```sh
-cd kubernetes
+cd k8s-terraform
 ```
 
 ### 3. Initialize Terraform
