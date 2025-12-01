@@ -124,8 +124,8 @@ terraform apply
 ### 5. Verify the resources
 
 ```sh
-kubectl get all -n <your-namespace>
-kubectl get configmap -n <your-namespace>
+kubectl get all -n myapp
+kubectl describe configmap nginx-config -n myapp
 ```
 
 # **Screenshots**
