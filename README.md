@@ -134,39 +134,38 @@ kubectl get configmap -n <your-namespace>
 
 For the Docker part, I included screeshots of:
 
-Use a relative Markdown image link:
+- [Docker Terraform Apply](docker-terraform/screenshots/docker-terraform-apply.png)
 
-[Docker Terraform Apply](docker-terraform/screenshots/docker-terraform-apply.png)
+- [All 4 containers running](docker-terraform/screenshots/docker-containers.png)
 
-[All 4 containers running](docker-terraform/screenshots/docker-containers.png)
+- [Health endpoint](docker-terraform/screenshots/docker-health-check.png)
 
-[Health endpoint](docker-terraform/screenshots/docker-health-check.png)
+- [API responses with cache stats](docker-terraform/screenshots/docker-api-cache-demo.png)
 
-[API responses with cache stats](docker-terraform/screenshots/docker-api-cache-demo.png)
+- [Backend startup logs](docker-terraform/screenshots/docker-backend-logs.png)
 
-[Backend startup logs](docker-terraform/screenshots/docker-backend-logs.png)
+- [Network inspection](docker-terraform/screenshots/docker-network.png)
 
-[Network inspection](docker-terraform/screenshots/docker-network.png)
-
-[Terraform plan](docker-terraform/screenshots/docker-terraform-plan.png)
+- [Terraform plan](docker-terraform/screenshots/docker-terraform-plan.png)
 
 
 ## **Kubernetes Terraform Project Screenshots**
 
 For the Kubernetes part, I included screenshots of:
-[Cluster creation](k8s-terraform/screenshots/k8s-create-cluster.png)
 
-[Terraform apply output](k8s-terraform/screenshots/k8s-terraform-apply.png)  
+- [Cluster creation](k8s-terraform/screenshots/k8s-create-cluster.png)
 
-[All K8s resources](k8s-terraform/screenshots/k8s-all-resources.png)  
+- [Terraform apply output](k8s-terraform/screenshots/k8s-terraform-apply.png)  
 
-[ConfigMap details](k8s-terraform/screenshots/k8s-configmap.png)  
+- [All K8s resources](k8s-terraform/screenshots/k8s-all-resources.png)  
 
-[Custom HTML page](k8s-terraform/screenshots/k8s-custom-page.png)  
+- [ConfigMap details](k8s-terraform/screenshots/k8s-configmap.png)  
 
-[Pod configuration](k8s-terraform/screenshots/k8s-pod-details.png)  
+- [Custom HTML page](k8s-terraform/screenshots/k8s-custom-page.png)  
 
-[Nginx logs](k8s-terraform/screenshots/k8s-logs.png)
+- [Pod configuration](k8s-terraform/screenshots/k8s-pod-details.png)  
+
+- [Nginx logs](k8s-terraform/screenshots/k8s-logs.png)
 
 # **Reflection**
 
